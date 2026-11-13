@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About us – FireGlobe</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="glass nav">
+  <a class="brand" href="index.html">FireGlobe</a>
+  <div><a href="index.html">Globe</a><a class="active" href="about.html">About us</a></div>
+</nav>
+<main class="page">
+  <section class="glass card">
+    <h1>About us</h1>
+    <p>We built FireGlobe for the NASA Space Apps Challenge "Harmonization of MODIS and VIIRS Hot Spots". Our goal is to give emergency responders, scientists and land managers one clear picture of where burning happens and when.</p>
+  </section>
+  <section class="glass card">
+    <h2>The problem</h2>
+    <p>Satellites have tracked active fires for more than twenty years, but the record is split between two sensors, MODIS and VIIRS. Their files use different confidence scales and brightness columns, so they can't be compared directly.</p>
+  </section>
+  <section class="glass card">
+    <h2>How it works</h2>
+    <p>You upload a FIRMS hotspot CSV. FireGlobe converts MODIS confidence numbers and VIIRS low, nominal and high ratings onto one 0 to 100 scale, then counts detections inside hexagonal areas on the globe. Deeper, taller columns mark areas that burn more often. Use the year slider to watch the history build up, and click any column to see its yearly pattern and busiest month.</p>
+  </section>
+  <section class="glass card">
+    <h2>Data</h2>
+    <p>Active fire detections come from NASA FIRMS (Fire Information for Resource Management System). Everything runs in your browser, and your file never leaves your computer.</p>
+  </section>
+  <section class="glass card">
+    <h2>Team</h2>
+    <div class="team">
+      <div><strong>Member name</strong><br><span class="hint">Role</span></div>
+      <div><strong>Member name</strong><br><span class="hint">Role</span></div>
+      <div><strong>Member name</strong><br><span class="hint">Role</span></div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

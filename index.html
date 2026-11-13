@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FireGlobe – Burning activity from MODIS and VIIRS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="globe-page">
+<nav class="glass nav">
+  <a class="brand" href="index.html">FireGlobe</a>
+  <div><a class="active" href="index.html">Globe</a><a href="about.html">About us</a></div>
+</nav>
+
+<div id="globe"></div>
+
+<section id="drop" class="glass card center">
+  <h1>Upload your hotspot CSV</h1>
+  <p>Drop a NASA FIRMS active fire file here, or choose one from your computer. MODIS and VIIRS files both work, and you can load them one after the other.</p>
+  <button id="pick" class="btn">Choose CSV file</button>
+  <p id="err" class="err" role="alert"></p>
+  <p class="hint">Needs the columns latitude, longitude and acq_date. Files over 200,000 rows are thinned evenly so the globe stays smooth.</p>
+</section>
+<input id="file" type="file" accept=".csv,text/csv" hidden>
+
+<aside id="controls" class="glass card side left" hidden>
+  <h2>Burning activity</h2>
+  <p class="big"><span id="count">0</span> detections shown</p>
+  <fieldset><legend>Sensors</legend>
+    <label><input type="checkbox" id="modis" checked> MODIS</label>
+    <label><input type="checkbox" id="viirs" checked> VIIRS</label>
+  </fieldset>
+  <label class="row">Minimum confidence
+    <select id="conf"><option value="0">Any</option><option value="30">Nominal and high</option><option value="80">High only</option></select>
+  </label>
+  <label class="row">Basemap
+    <select id="base"><option value="night">Night lights</option><option value="day">Satellite</option></select>
+  </label>
+  <div class="legend"><span>Rarely burns</span><i></i><span>Burns often</span></div>
+  <p class="hint">Taller, deeper columns mean more detections in that area. Click one to see its history.</p>
+  <button id="again" class="btn ghost">Upload another CSV</button>
+</aside>
+
+<aside id="info" class="glass card side right" hidden>
+  <button id="close" class="x" aria-label="Close">×</button>
+  <div id="infobody"></div>
+</aside>
+
+<section id="timeline" class="glass tl" hidden>
+  <button id="play" class="btn">Play</button>
+  <input id="year" type="range" aria-label="Year">
+  <strong id="yl"></strong>
+  <label><input type="checkbox" id="cum" checked> Cumulative</label>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/globe.gl"></script>
+<script src="app.js"></script>
+</body>
+</html>
